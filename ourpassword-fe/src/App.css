@@ -1,0 +1,9 @@
+.App {
+  cursor: url("/assets/cursor.png") 2 2, auto;
+}
+
+button,
+input,
+label {
+  cursor: url("/assets/cursor.png") 2 2, auto;
+}
