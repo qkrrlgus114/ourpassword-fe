@@ -6,7 +6,7 @@ build/
 dist/
 
 # 환경 파일
-.env
+.env*
 .env.local
 .env.*.local
 

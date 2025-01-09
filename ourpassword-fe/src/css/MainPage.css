@@ -2,7 +2,15 @@
   background-image: url("/assets/back-ground-image.png");
   background-size: cover;
   width: 100%;
-  height: 100vh;
+}
+
+/* qr코드 (qr) */
+.qr_btn {
+  width: 10%;
+  min-width: 150px;
+  position: relative;
+  top: 15px;
+  left: 15px;
 }
 
 /* 헤더 (Header) */
@@ -10,14 +18,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  height: 25vh;
 }
 
 .header__logo {
   max-width: 100%;
+  min-width: 10px;
   width: 450px;
-  height: auto;
-  margin-top: 8%;
+  margin-top: 3%;
 }
 
 /* 컨텐츠 (Content) */
@@ -61,7 +69,8 @@ label {
   font-weight: bold;
 }
 
-input {
+input,
+select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -73,8 +82,21 @@ input {
   width: 100%;
   padding: 10px;
   background-image: linear-gradient(to right, #c08dec, #544fcb);
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
+  cursor: url("/assets/encrypt-cursor.png") 2 2, auto;
+}
+
+.btn_encrypt:hover {
+  background-image: linear-gradient(to right, #a954f3, #201ad3);
+  transform: scale(1.01);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+.error_message {
+  color: #b31f38;
+  font-size: 0.8rem;
 }
 
 /* 푸터 (Footer) */
@@ -88,11 +110,22 @@ input {
 .footer_bar {
   width: 90%;
   height: 30%;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .footer_bar {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .footer_count {
+    padding: 10px 0;
+  }
 }

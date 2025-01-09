@@ -1,0 +1,49 @@
+.popup_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup_content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.popup_title {
+  font-size: 1.5rem;
+  padding: 20px 0;
+}
+
+.popup_content img {
+  width: 400px;
+  height: 500px;
+}
+
+.popup_close {
+  background-color: #ffe000;
+  border: none;
+  margin-top: 20px;
+  height: 50px;
+  font-size: 1.2rem;
+}
+
+.popup_close:hover {
+  background-color: #ffe100d7;
+  border: none;
+  margin-top: 20px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: url("/assets/cry-cursor.png") 2 2, auto;
+}

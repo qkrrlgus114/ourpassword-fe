@@ -1,9 +1,11 @@
 .App {
+  height: 100%;
   cursor: url("/assets/cursor.png") 2 2, auto;
 }
 
 button,
 input,
-label {
+label,
+select {
   cursor: url("/assets/cursor.png") 2 2, auto;
 }
