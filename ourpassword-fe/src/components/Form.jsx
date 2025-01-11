@@ -44,7 +44,7 @@ function Form({ encryptModules, onSubmit }) {
     <div className="form">
       <div className="form_input">
         <div className="form_group">
-          <label htmlFor="form_type">
+          <label>
             암호화 방식
             {noEncryptModule && (
               <span className="error_message">{noEncryptModule}</span>
@@ -78,7 +78,7 @@ function Form({ encryptModules, onSubmit }) {
           </select>
         </div>
         <div className="form_group">
-          <label htmlFor="form_key">
+          <label>
             Key
             {noKey && <span className="error_message">{noKey}</span>}
           </label>
@@ -95,7 +95,7 @@ function Form({ encryptModules, onSubmit }) {
           ></input>
         </div>
         <div className="form_group">
-          <label htmlFor="form_content">
+          <label>
             내용
             {noValue && <span className="error_message">{noValue}</span>}
           </label>

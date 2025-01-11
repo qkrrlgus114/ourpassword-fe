@@ -1,7 +1,8 @@
 .result {
-  width: 28%;
-  height: 90%;
-  min-width: 430px;
+  width: 90%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 530px;
   background: white;
   display: flex;
   justify-content: center;
@@ -9,13 +10,12 @@
 }
 
 .result_input {
-  height: 100%;
-  width: 85%;
+  width: 90%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border-radius: 10px;
 }
 
 .result_group {
@@ -24,34 +24,85 @@
   flex-direction: column;
 }
 
-label {
-  font-size: 14px;
-  color: #555;
+.result_group label {
+  font-size: 16px;
+  color: #212121;
+  font-weight: 600;
   margin-bottom: 10px;
-  font-weight: bold;
 }
 
-input,
-select {
+.result_wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.result_content {
+  width: 100%;
+  padding-right: 40px;
+  background: rgba(84, 79, 203, 0.5);
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+  box-sizing: border-box;
+  height: 45px;
+  border-radius: 6px;
+  border: 2px solid #544fcb;
 }
 
-.btn_encrypt {
+.reset_btn {
   color: white;
   width: 100%;
   padding: 10px;
-  background-image: linear-gradient(to right, #c08dec, #544fcb);
-  border-radius: 5px;
+  background: #544fcb;
+  border-radius: 6px;
   border: none;
   cursor: url("/assets/encrypt-cursor.png") 2 2, auto;
+  font-size: 18px;
+  font-weight: 450;
 }
 
-.btn_encrypt:hover {
-  background-image: linear-gradient(to right, #a954f3, #201ad3);
+.reset_btn:hover {
   transform: scale(1.01);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
+}
+
+.copy_icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.copy-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(104, 41, 255, 0.5);
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  z-index: 9999;
+  animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
 }

@@ -1,13 +1,17 @@
+* {
+  font-family: "Pretendard Variable", sans-serif;
+}
+
 body,
 html {
-  font-family: "Pretendard-Regular";
   margin: 0;
   overflow-y: auto;
 }
 
 @font-face {
-  font-family: "Pretendard-Regular";
-  font-weight: 400;
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
   font-style: normal;
-  src: url("./fonts/PretendardVariable.ttf") format("truetype");
+  font-display: swap;
+  src: url("./fonts/PretendardVariable.woff2") format("woff2-variations");
 }

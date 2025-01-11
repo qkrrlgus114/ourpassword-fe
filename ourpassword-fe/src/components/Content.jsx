@@ -24,7 +24,7 @@ function Content({ encryptModules, onError }) {
         setTimeout(() => {
           setEncryptedValue(res.data.data.encryptedValue);
           setIsLoading(false);
-        }, 2000);
+        }, 3000);
       })
       .catch((err) => {
         console.log(err.response.data.message);
