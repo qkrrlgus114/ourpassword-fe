@@ -22,8 +22,10 @@ function Form({ encryptModules, onSubmit }) {
     }
 
     if (!key) {
-      setNoKey(" (암호 키를 입력해주세요)");
-      status = false;
+      if (encryptModule != "BCrypt") {
+        setNoKey(" (암호 키를 입력해주세요)");
+        status = false;
+      }
     } else {
       setNoKey("");
     }
@@ -40,6 +42,16 @@ function Form({ encryptModules, onSubmit }) {
     onSubmit({ encryptModule, key, value });
   };
 
+  const handleModuleChange = (module) => {
+    setKey("");
+    setValue("");
+
+    if (module != null) {
+      setEncryptModule(module);
+      setNoEncryptModule("");
+    }
+  };
+
   return (
     <div className="form">
       <div className="form_input">
@@ -54,21 +66,13 @@ function Form({ encryptModules, onSubmit }) {
             id="form_type"
             value={encryptModule}
             onChange={(e) => {
-              setEncryptModule(e.target.value);
-              if (e.target.value) setNoEncryptModule("");
+              handleModuleChange(e.target.value);
             }}
           >
             <option value="" disabled>
               선택하세요
             </option>
             {encryptModules.map((module) => {
-              if (module.name === "BCrypt") {
-                return (
-                  <option key={module.id} value={module.name} disabled>
-                    {module.name}(준비중입니다)
-                  </option>
-                );
-              }
               return (
                 <option key={module.id} value={module.name}>
                   {module.name}
@@ -92,6 +96,8 @@ function Form({ encryptModules, onSubmit }) {
               if (e.target.value) setNoKey("");
             }}
             autoComplete="off"
+            value={key}
+            disabled={encryptModule === "BCrypt"}
           ></input>
         </div>
         <div className="form_group">
@@ -109,6 +115,7 @@ function Form({ encryptModules, onSubmit }) {
               if (e.target.value) setNoValue("");
             }}
             autoComplete="off"
+            value={value}
           ></input>
         </div>
         <button className="btn_encrypt" onClick={handleEncrypt}>
