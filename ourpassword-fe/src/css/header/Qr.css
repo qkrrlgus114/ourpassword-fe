@@ -1,0 +1,10 @@
+.qr {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+.qr_btn {
+  height: 90%;
+  max-height: 50px;
+}

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import "../../css/footer/Footer.css";
 
 function Footer() {
   const [totalVisitor, setTotalVisitor] = useState(0);

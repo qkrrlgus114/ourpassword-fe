@@ -1,8 +1,8 @@
 .result {
   width: 90%;
   max-width: 600px;
-  height: 100%;
-  max-height: 530px;
+  height: 90%;
+  height: 530px;
   background: white;
   display: flex;
   justify-content: center;
@@ -104,5 +104,11 @@
   100% {
     opacity: 0;
     transform: translate(-50%, -60%);
+  }
+}
+
+@media (max-width: 768px) {
+  .result {
+    height: 500px;
   }
 }

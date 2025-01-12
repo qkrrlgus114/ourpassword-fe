@@ -1,5 +1,6 @@
 import { useState } from "react";
 import KakaoPopup from "./kakaoPopup";
+import "../../css/header/Qr.css";
 
 function Qr() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

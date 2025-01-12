@@ -1,7 +1,6 @@
-import Header from "../components/Header";
-import Content from "../components/Content";
-import Footer from "../components/Footer";
-import Qr from "../components/Qr";
+import Header from "../components/header/Header";
+import Content from "../components/content/Content";
+import Footer from "../components/footer/Footer";
 import ErrorModal from "../components/ErrorModal";
 import "../css/MainPage.css";
 import "../css/ErrorModal.css";
@@ -11,8 +10,9 @@ import { useNavigate } from "react-router-dom";
 
 function MainPage() {
   const [encryptModules, setEncryptModules] = useState([]);
-
   const [errorState, setErrorState] = useState({ isError: false, message: "" });
+
+  const [isResultVisible, setIsResultVisible] = useState(false);
 
   // 에러 모달 보여주기
   const showErrorModal = (message) => {
@@ -40,10 +40,13 @@ function MainPage() {
 
   return (
     <div className="mainPage">
-      <Qr />
       <Header />
-      <Content encryptModules={encryptModules} onError={showErrorModal} />
-      <Footer />
+      <Content
+        encryptModules={encryptModules}
+        onError={showErrorModal}
+        setIsResultVisible={setIsResultVisible}
+      />
+      <Footer className={`Footer ${isResultVisible ? "footer--result" : ""}`} />
       {errorState.isError && (
         <ErrorModal
           message={errorState.message}

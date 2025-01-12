@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../css/Result.css";
+import "../../css/Result.css";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 function Result({ encryptedValue, submitFormData }) {

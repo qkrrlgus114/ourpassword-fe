@@ -1,4 +1,4 @@
-import "../css/KakaoPopup.css";
+import "../../css/header/KakaoPopup.css";
 import { useState } from "react";
 
 function KakaoPopup({ onClose }) {
