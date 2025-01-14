@@ -25,7 +25,7 @@ function Result({ encryptedValue, submitFormData }) {
             className="form_key"
             type="text"
             autoComplete="off"
-            readOnly
+            disabled
             value={submitFormData.encryptModule}
           ></input>
         </div>
@@ -35,7 +35,7 @@ function Result({ encryptedValue, submitFormData }) {
             className="form_key"
             type="text"
             autoComplete="off"
-            readOnly
+            disabled
             value={submitFormData.key}
           ></input>
         </div>
@@ -46,7 +46,7 @@ function Result({ encryptedValue, submitFormData }) {
             type="text"
             autoComplete="off"
             value={submitFormData.value}
-            readOnly
+            disabled
           ></input>
         </div>
         <div className="result_group">

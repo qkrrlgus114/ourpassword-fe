@@ -88,6 +88,10 @@
   animation: fadeInOut 2s ease forwards;
 }
 
+.result_group > input {
+  background-color: #eeeded;
+}
+
 @keyframes fadeInOut {
   0% {
     opacity: 0;

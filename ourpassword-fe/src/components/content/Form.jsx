@@ -1,10 +1,14 @@
 import { useState } from "react";
+import "../../css/content/form.css";
 
 function Form({ encryptModules, onSubmit }) {
   // 값 상태
   const [encryptModule, setEncryptModule] = useState("");
   const [key, setKey] = useState("");
   const [value, setValue] = useState("");
+
+  // key를 숨기는 상태
+  const [showKey, setShowKey] = useState(false);
 
   // 값이 없을 경우를 확인하기 위한 상태
   const [noEncryptModule, setNoEncryptModule] = useState("");
@@ -22,7 +26,7 @@ function Form({ encryptModules, onSubmit }) {
     }
 
     if (!key) {
-      if (encryptModule != "BCrypt") {
+      if (!showKey) {
         setNoKey(" (암호 키를 입력해주세요)");
         status = false;
       }
@@ -52,6 +56,22 @@ function Form({ encryptModules, onSubmit }) {
     }
   };
 
+  const checkKey = (module) => {
+    if (
+      module === "SHA_1" ||
+      module === "SHA_224" ||
+      module === "SHA_256" ||
+      module === "SHA_386" ||
+      module === "SHA_512" ||
+      module === "MD_5" ||
+      module === "BCrypt"
+    ) {
+      setShowKey(true);
+    } else {
+      setShowKey(false);
+    }
+  };
+
   return (
     <div className="form">
       <div className="form_input">
@@ -67,12 +87,20 @@ function Form({ encryptModules, onSubmit }) {
             value={encryptModule}
             onChange={(e) => {
               handleModuleChange(e.target.value);
+              checkKey(e.target.value);
             }}
           >
             <option value="" disabled>
               선택하세요
             </option>
             {encryptModules.map((module) => {
+              if (module.name === "BCrypt") {
+                return (
+                  <option key={module.id} value={module.name}>
+                    {module.name + "(스프링 시큐리티)"}
+                  </option>
+                );
+              }
               return (
                 <option key={module.id} value={module.name}>
                   {module.name}
@@ -88,7 +116,7 @@ function Form({ encryptModules, onSubmit }) {
           </label>
           <input
             id="form_key"
-            className="form_key"
+            className={`form_key ${showKey ? "form_key_color" : ""}`}
             type="text"
             placeholder="암호 키"
             onChange={(e) => {
@@ -97,7 +125,7 @@ function Form({ encryptModules, onSubmit }) {
             }}
             autoComplete="off"
             value={key}
-            disabled={encryptModule === "BCrypt"}
+            disabled={showKey}
           ></input>
         </div>
         <div className="form_group">

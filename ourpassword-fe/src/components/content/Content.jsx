@@ -2,6 +2,7 @@ import axios from "axios";
 import Form from "./Form";
 import Loading from "./Loading";
 import Result from "./Result";
+import "../../css/content/Content.css";
 import { useState } from "react";
 
 function Content({ encryptModules, onError, setIsResultVisible }) {

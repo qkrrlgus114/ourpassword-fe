@@ -12,33 +12,36 @@
 }
 
 .error_content {
-  width: 30%;
-  height: 30%;
-  min-width: 250px;
+  width: 600px;
+  height: 334px;
   background-color: white;
-  padding: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
-  justify-content: space-around;
-  text-align: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .error_icon {
-  color: red;
-  font-size: 5rem;
+  width: 124px;
+  height: 124px;
 }
 
 .error_title {
   color: black;
-  font-size: 1.5rem;
-  padding: 20px 0;
+  font-size: 18px;
+  font-weight: 500;
+  width: 90%;
+  text-align: center;
 }
 
 .error_btn {
-  height: 15%;
-  background-color: #e85e6c;
-  border-radius: 10px;
+  height: 45px;
+  width: 500px;
+  background-color: #ea7979;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
   border: none;
   color: white;
 }
@@ -58,4 +61,15 @@
   height: 50px;
   font-size: 1.2rem;
   cursor: url("/assets/cry-cursor.png") 2 2, auto;
+}
+
+@media (max-width: 768px) {
+  .error_content {
+    aspect-ratio: 600 / 334;
+    width: 80%;
+  }
+
+  .error_btn {
+    width: 90%;
+  }
 }
